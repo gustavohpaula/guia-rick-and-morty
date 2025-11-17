@@ -49,7 +49,7 @@ class _ResidentsScreenState extends State<ResidentsScreen> {
       body: loading
           ? const LoadingWidget()
           : (error != null
-              ? Center(child: Text('Erro: \$error'))
+              ? Center(child: Text('Erro: $error'))
               : ListView.builder(
                   itemCount: residents.length,
                   itemBuilder: (context, i) {

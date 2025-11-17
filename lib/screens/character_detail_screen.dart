@@ -53,7 +53,7 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
       body: _loading
           ? const LoadingWidget()
           : (_error != null
-              ? Center(child: Text('Erro: \$_error'))
+              ? Center(child: Text('Erro: $_error'))
               : SingleChildScrollView(
                   padding: const EdgeInsets.all(16),
                   child: Column(
@@ -65,11 +65,11 @@ class _CharacterDetailScreenState extends State<CharacterDetailScreen> {
                           style: const TextStyle(
                               fontSize: 22, fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      Text('Status: \${_character.status}'),
-                      Text('Espécie: \${_character.species}'),
-                      Text('Gênero: \${_character.gender}'),
-                      Text('Origem: \${_character.originName}'),
-                      Text('Localização: \${_character.locationName}'),
+                      Text('Status: ${_character.status}'),
+                      Text('Espécie: ${_character.species}'),
+                      Text('Gênero: ${_character.gender}'),
+                      Text('Origem: ${_character.originName}'),
+                      Text('Localização: ${_character.locationName}'),
                       const SizedBox(height: 16),
                       ElevatedButton.icon(
                         icon: Icon(favProv.isFavorite(_character.id)

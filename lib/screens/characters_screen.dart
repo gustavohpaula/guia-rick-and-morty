@@ -36,7 +36,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
         if (prov.characters.isEmpty && prov.loading)
           return const LoadingWidget();
         if (prov.error != null)
-          return Center(child: Text('Erro: \${prov.error}'));
+          return Center(child: Text('Erro: ${prov.error}'));
         return ListView.builder(
           controller: _scrollController,
           itemCount: prov.characters.length + (prov.hasNext ? 1 : 0),

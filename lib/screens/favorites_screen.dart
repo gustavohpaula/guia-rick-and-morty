@@ -34,7 +34,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 if (snapshot.connectionState != ConnectionState.done)
                   return const LoadingWidget();
                 if (snapshot.hasError)
-                  return Center(child: Text('Erro: \${snapshot.error}'));
+                  return Center(child: Text('Erro: ${snapshot.error}'));
                 final list = snapshot.data as List<dynamic>;
                 return ListView.builder(
                   itemCount: list.length,

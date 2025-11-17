@@ -25,14 +25,17 @@ class CharacterProvider extends ChangeNotifier {
 
   Future<void> loadMore() async {
     if (!hasNext || loading) return;
+
     loading = true;
     error = null;
-    notifyListeners();
+
     try {
       final res = await _api.fetchCharacters(currentPage);
       final info = res['info'];
       final results = res['results'] as List<dynamic>;
+
       characters.addAll(results.map((e) => Character.fromJson(e)).toList());
+
       currentPage++;
       hasNext = info['next'] != null;
     } catch (e) {
@@ -61,13 +64,16 @@ class CharacterProvider extends ChangeNotifier {
 
   Future<void> loadMoreLocations() async {
     if (!locationHasNext || locationsLoading) return;
+
     locationsLoading = true;
-    notifyListeners();
+
     try {
       final res = await _api.fetchLocations(locationPage);
       final info = res['info'];
       final results = res['results'] as List<dynamic>;
+
       locations.addAll(results.map((e) => RMLocation.fromJson(e)).toList());
+
       locationPage++;
       locationHasNext = info['next'] != null;
     } catch (e) {
